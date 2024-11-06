@@ -93,9 +93,7 @@ void loop() {
     pixels.setPixelColor(0, pixels.Color(255, 0, 0));
     pixels.show();
     Serial.println("35");
-  }
-
-  if (temp >= 29 and temp < 30) {
+  } else if (temp >= 29 and temp < 30) {
     pixels.setPixelColor(11, pixels.Color(0, 0, 0));
     pixels.setPixelColor(10, pixels.Color(0, 0, 0));
     pixels.setPixelColor(9, pixels.Color(0, 0, 0));
