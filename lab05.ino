@@ -27,8 +27,8 @@ void setup() {
   tft.drawString("DHT", 80, 20);
   tft.setTextColor(TFT_RED, TFT_BLACK);
   Serial.begin(9600);
-  pixels.setPixelColor(5, pixels.Color(0, 255, 0));
-  pixels.setPixelColor(6, pixels.Color(255, 0, 0));
+  pixels.setPixelColor(5, pixels.Color(255, 0, 0));
+  pixels.setPixelColor(6, pixels.Color(0, 255, 0));
   pixels.show();
 }
 
@@ -44,8 +44,8 @@ void loop() {
     pixels.setPixelColor(9, pixels.Color(0, 0, 0));
     pixels.setPixelColor(8, pixels.Color(0, 0, 0));
     pixels.setPixelColor(7, pixels.Color(0, 0, 0));
-    pixels.setPixelColor(6, pixels.Color(255, 0, 0));
-    pixels.setPixelColor(5, pixels.Color(0, 255, 0));
+    pixels.setPixelColor(6, pixels.Color(100, 255, 100));
+    pixels.setPixelColor(5, pixels.Color(255, 100, 100));
     pixels.setPixelColor(4, pixels.Color(0, 0, 0));
     pixels.setPixelColor(3, pixels.Color(0, 0, 0));
     pixels.setPixelColor(2, pixels.Color(0, 0, 0));
@@ -94,55 +94,38 @@ void loop() {
     pixels.show();
     Serial.println("35");
   }
-  if (temp == 29) {
+
+  if (temp >= 29 and temp < 30) {
     pixels.setPixelColor(11, pixels.Color(0, 0, 0));
     pixels.setPixelColor(10, pixels.Color(0, 0, 0));
     pixels.setPixelColor(9, pixels.Color(0, 0, 0));
-    pixels.setPixelColor(8, pixels.Color(0, 0, 0));
-    pixels.setPixelColor(7, pixels.Color(0, 0, 0));
-    pixels.setPixelColor(6, pixels.Color(255, 0, 0));
-    pixels.setPixelColor(5, pixels.Color(0, 255, 0));
-    pixels.show();
-    Serial.println("30");
-  } else if (temp >= 29 and temp < 28) {
-    pixels.setPixelColor(11, pixels.Color(204, 51, 0));
-    pixels.setPixelColor(10, pixels.Color(0, 0, 0));
-    pixels.setPixelColor(9, pixels.Color(0, 0, 0));
-    pixels.setPixelColor(8, pixels.Color(0, 0, 0));
-    pixels.setPixelColor(7, pixels.Color(0, 0, 0));
+    pixels.setPixelColor(8, pixels.Color(102, 153, 0));
+    pixels.setPixelColor(7, pixels.Color(51, 204, 0));
     pixels.show();
     Serial.println("29");
-  } else if (temp >= 28 and temp < 27) {
-    pixels.setPixelColor(11, pixels.Color(204, 51, 0));
-    pixels.setPixelColor(10, pixels.Color(153, 102, 0));
-    pixels.setPixelColor(9, pixels.Color(0, 0, 0));
-    pixels.setPixelColor(8, pixels.Color(0, 0, 0));
-    pixels.setPixelColor(7, pixels.Color(0, 0, 0));
+  } else if (temp >= 28 and temp < 29) {
+    pixels.setPixelColor(11, pixels.Color(0, 0, 0));
+    pixels.setPixelColor(10, pixels.Color(0, 0, 0));
+    pixels.setPixelColor(9, pixels.Color(153, 102, 0));
+    pixels.setPixelColor(8, pixels.Color(102, 153, 0));
+    pixels.setPixelColor(7, pixels.Color(51, 204, 0));
     pixels.show();
     Serial.println("28");
-  } else if (temp >= 27 and temp < 26) {
-    pixels.setPixelColor(11, pixels.Color(204, 51, 0));
-    pixels.setPixelColor(10, pixels.Color(153, 102, 0));
-    pixels.setPixelColor(9, pixels.Color(102, 153, 0));
-    pixels.setPixelColor(8, pixels.Color(0, 0, 0));
-    pixels.setPixelColor(7, pixels.Color(0, 0, 0));
+  } else if (temp >= 27 and temp < 28) {
+    pixels.setPixelColor(11, pixels.Color(0, 0, 0));
+    pixels.setPixelColor(10, pixels.Color(204, 51, 0));
+    pixels.setPixelColor(9, pixels.Color(153, 102, 0));
+    pixels.setPixelColor(8, pixels.Color(102, 153, 0));
+    pixels.setPixelColor(7, pixels.Color(51, 204, 0));
     pixels.show();
     Serial.println("27");
-  } else if (temp >= 26 and temp < 25) {
-    pixels.setPixelColor(11, pixels.Color(204, 51, 0));
-    pixels.setPixelColor(10, pixels.Color(153, 102, 0));
-    pixels.setPixelColor(9, pixels.Color(102, 153, 0));
-    pixels.setPixelColor(8, pixels.Color(51, 204, 0));
-    pixels.setPixelColor(7, pixels.Color(0, 0, 0));
+  } else if (temp < 27) {
+    pixels.setPixelColor(11, pixels.Color(255, 0, 0));
+    pixels.setPixelColor(10, pixels.Color(204, 51, 0));
+    pixels.setPixelColor(9, pixels.Color(153, 102, 0));
+    pixels.setPixelColor(8, pixels.Color(102, 153, 0));
+    pixels.setPixelColor(7, pixels.Color(51, 204, 0));
     pixels.show();
     Serial.println("26");
-  } else if (temp >= 25) {
-    pixels.setPixelColor(11, pixels.Color(204, 51, 0));
-    pixels.setPixelColor(10, pixels.Color(153, 102, 0));
-    pixels.setPixelColor(9, pixels.Color(102, 153, 0));
-    pixels.setPixelColor(8, pixels.Color(51, 204, 0));
-    pixels.setPixelColor(7, pixels.Color(255, 0, 0));
-    pixels.show();
-    Serial.println("25");
   }
 }
